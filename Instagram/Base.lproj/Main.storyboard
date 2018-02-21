@@ -33,7 +33,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoS-57-cad">
                                 <rect key="frame" x="109" y="287" width="197" height="30"/>
@@ -57,11 +57,30 @@
                     <connections>
                         <outlet property="passwordField" destination="MsG-I8-h6a" id="PY2-mu-l4x"/>
                         <outlet property="usernameField" destination="BvC-9t-wzx" id="DQl-Cz-d6r"/>
+                        <segue destination="z00-xJ-mgk" kind="presentation" identifier="loginSegue" id="Fki-8a-1SU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KGB-n0-74V">
+            <objects>
+                <viewController id="z00-xJ-mgk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wks-kD-BK7"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Yk-PQ-HGM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ozd-o1-ALa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Glf-De-qdC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="872" y="123"/>
         </scene>
     </scenes>
 </document>
