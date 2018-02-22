@@ -43,13 +43,6 @@ class LoginViewController: UIViewController {
         
         newUser.username = usernameField.text
         newUser.password = passwordField.text
-//        newUser.signUpInBackground { (success: Bool, error: Error?) in
-//            if success {
-//                print("User Created!")
-//            } else {
-//                print(error!.localizedDescription)
-//            }
-//        }
         newUser.signUpInBackground { (success: Bool, error: Error?) in
             if let error = error {
                 print(error.localizedDescription)

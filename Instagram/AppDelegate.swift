@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate{
 
     var window: UIWindow?
 
@@ -24,6 +24,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://lit-castle-93412.herokuapp.com/parse"
             })
         )
+        
+        if PFUser.current() != nil {
+            //let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            // view controller currently being set in Storyboard as default will be overridden
+            //window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "FeedViewController")
+//            var mainView: UIStoryboard!
+//            mainView = UIStoryboard(name: "Main", bundle: nil)
+//            let  : UIViewController = mainView.instantiateViewController(withIdentifier: "FeedViewController")
+//            
+
+        
+        }
+
         return true
     }
 

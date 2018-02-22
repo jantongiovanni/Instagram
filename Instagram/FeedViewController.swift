@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Parse
 
 class FeedViewController: UIViewController {
 
+    @IBOutlet weak var logoutButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +26,18 @@ class FeedViewController: UIViewController {
     }
     
 
+    @IBAction func onLogout(_ sender: AnyObject) {
+        PFUser.logOutInBackground { (error: Error?) in
+            if let error = error {
+                print("User logout failed: \(error.localizedDescription)")
+            } else {
+                print("User logout successful")
+            //need to segue back to login screen
+                self.performSegue(withIdentifier: "logoutSegue", sender: nil)
+            }
+        }
+       
+    }
     /*
     // MARK: - Navigation
 

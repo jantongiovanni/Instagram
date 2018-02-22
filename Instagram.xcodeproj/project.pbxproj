@@ -141,14 +141,14 @@
 		F0EAE80F203B89CA00D1CC52 /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				F0EAE814203B89CA00D1CC52 /* Main.storyboard */,
+				F0960E45203B8CFF00EDA7B0 /* LoginViewController.swift */,
+				F0B3D61B203E3B8E00AA4EF1 /* FeedViewController.swift */,
 				F0EAE810203B89CA00D1CC52 /* AppDelegate.swift */,
 				F0EAE812203B89CA00D1CC52 /* ViewController.swift */,
-				F0EAE814203B89CA00D1CC52 /* Main.storyboard */,
-				F0B3D61B203E3B8E00AA4EF1 /* FeedViewController.swift */,
 				F0EAE817203B89CA00D1CC52 /* Assets.xcassets */,
 				F0EAE819203B89CA00D1CC52 /* LaunchScreen.storyboard */,
 				F0EAE81C203B89CA00D1CC52 /* Info.plist */,
-				F0960E45203B8CFF00EDA7B0 /* LoginViewController.swift */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -611,6 +611,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Instagram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = csumb.edu.antongiovanni.Instagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -624,6 +625,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Instagram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = csumb.edu.antongiovanni.Instagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -638,6 +640,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = InstagramTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = csumb.edu.antongiovanni.InstagramTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -653,6 +656,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = InstagramTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = csumb.edu.antongiovanni.InstagramTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -667,6 +671,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = InstagramUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = csumb.edu.antongiovanni.InstagramUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -681,6 +686,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = InstagramUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = csumb.edu.antongiovanni.InstagramUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
