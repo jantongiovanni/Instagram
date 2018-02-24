@@ -14,6 +14,7 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var tap: UITapGestureRecognizer!
+    @IBOutlet weak var captionText: UITextField!
     let vc = UIImagePickerController()
     
     

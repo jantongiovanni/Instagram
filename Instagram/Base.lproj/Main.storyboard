@@ -46,7 +46,7 @@
                                     <action selector="onSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WHi-p5-M3q"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Instagram" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wuC-T6-4Sd">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Instagram" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wuC-T6-4Sd">
                                 <frame key="frameInset" minX="20" minY="93" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -147,12 +147,19 @@
                                     <outletCollection property="gestureRecognizers" destination="d7E-xc-YEg" appends="YES" id="BTp-BI-6IQ"/>
                                 </connections>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" allowsEditingTextAttributes="YES" placeholder="Write a caption..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bQc-bX-AL0">
+                                <frame key="frameInset" minX="208" minY="110" width="183" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Compose" id="EKq-Nu-Ifo"/>
                     <connections>
                         <outlet property="cancelButton" destination="oPk-kU-11L" id="pdr-No-6Yv"/>
+                        <outlet property="captionText" destination="bQc-bX-AL0" id="UYi-gX-iII"/>
                         <outlet property="imageView" destination="QcI-ea-586" id="cqb-y6-SVX"/>
                         <outlet property="shareButton" destination="ZcN-7y-ttZ" id="b7v-Oe-A5D"/>
                         <outlet property="tap" destination="d7E-xc-YEg" id="vBn-RE-i6F"/>
@@ -205,6 +212,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="l9x-kU-8DN"/>
+        <segue reference="gOQ-KJ-DQe"/>
     </inferredMetricsTieBreakers>
 </document>
