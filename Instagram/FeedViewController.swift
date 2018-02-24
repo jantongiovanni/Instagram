@@ -12,6 +12,7 @@ import Parse
 class FeedViewController: UIViewController {
 
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var composeButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -38,6 +39,11 @@ class FeedViewController: UIViewController {
         }
        
     }
+    
+    @IBAction func onCompose(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "composeSegue", sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

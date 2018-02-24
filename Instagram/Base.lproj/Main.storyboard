@@ -87,17 +87,69 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="ehX-dA-pfn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chu-lq-AHp">
+                                <frame key="frameInset" minX="328" minY="72" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Compose"/>
+                                <connections>
+                                    <action selector="onCompose:" destination="z00-xJ-mgk" eventType="touchUpInside" id="xSG-mL-hvC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Instagram" id="RPc-ec-plA"/>
                     <connections>
+                        <outlet property="composeButton" destination="chu-lq-AHp" id="pCv-AA-doF"/>
                         <outlet property="logoutButton" destination="e6q-DX-smu" id="ymK-oo-yOg"/>
+                        <segue destination="sdc-ds-lyh" kind="presentation" identifier="composeSegue" id="qkf-Fs-S3u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Glf-De-qdC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1778.2608695652175" y="122.28260869565219"/>
+        </scene>
+        <!--Compose-->
+        <scene sceneID="p00-CB-cJ2">
+            <objects>
+                <viewController id="jwv-hc-l0R" customClass="ComposeViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7SI-1K-wWP"/>
+                        <viewControllerLayoutGuide type="bottom" id="gfh-3e-rjp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BDF-gp-Up5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPk-kU-11L">
+                                <frame key="frameInset" minX="19" minY="72" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onCancel:" destination="jwv-hc-l0R" eventType="touchUpInside" id="Et0-an-Re0"/>
+                                    <segue destination="xeq-HV-IqV" kind="presentation" identifier="cancelSegue" id="l9x-kU-8DN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcN-7y-ttZ">
+                                <frame key="frameInset" minX="351" minY="72" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="onShare:" destination="jwv-hc-l0R" eventType="touchUpInside" id="b9e-7I-fT0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Compose" id="EKq-Nu-Ifo"/>
+                    <connections>
+                        <outlet property="cancelButton" destination="oPk-kU-11L" id="pdr-No-6Yv"/>
+                        <outlet property="shareButton" destination="ZcN-7y-ttZ" id="b7v-Oe-A5D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="11t-dF-QRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3585.507246376812" y="121.46739130434784"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="by5-N1-Rkr">
@@ -117,5 +169,26 @@
             </objects>
             <point key="canvasLocation" x="871.01449275362324" y="122.28260869565219"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TIh-VW-jQS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sdc-ds-lyh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sIh-c4-TLL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jwv-hc-l0R" kind="relationship" relationship="rootViewController" id="oLa-wm-3Z7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="osA-MN-qQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2688" y="123"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="l9x-kU-8DN"/>
+    </inferredMetricsTieBreakers>
 </document>
