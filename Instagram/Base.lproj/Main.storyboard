@@ -138,16 +138,32 @@
                                     <action selector="onShare:" destination="jwv-hc-l0R" eventType="touchUpInside" id="b9e-7I-fT0"/>
                                 </connections>
                             </button>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QcI-ea-586">
+                                <frame key="frameInset" minY="110" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="d7E-xc-YEg" appends="YES" id="BTp-BI-6IQ"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Compose" id="EKq-Nu-Ifo"/>
                     <connections>
                         <outlet property="cancelButton" destination="oPk-kU-11L" id="pdr-No-6Yv"/>
+                        <outlet property="imageView" destination="QcI-ea-586" id="cqb-y6-SVX"/>
                         <outlet property="shareButton" destination="ZcN-7y-ttZ" id="b7v-Oe-A5D"/>
+                        <outlet property="tap" destination="d7E-xc-YEg" id="vBn-RE-i6F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11t-dF-QRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="d7E-xc-YEg">
+                    <connections>
+                        <action selector="onTap:" destination="jwv-hc-l0R" id="Jc7-fk-Xzg"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3585.507246376812" y="121.46739130434784"/>
         </scene>
