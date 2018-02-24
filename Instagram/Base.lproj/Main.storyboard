@@ -59,14 +59,14 @@
                     <connections>
                         <outlet property="passwordField" destination="MsG-I8-h6a" id="PY2-mu-l4x"/>
                         <outlet property="usernameField" destination="BvC-9t-wzx" id="DQl-Cz-d6r"/>
-                        <segue destination="z00-xJ-mgk" kind="presentation" identifier="loginSegue" id="Fki-8a-1SU"/>
+                        <segue destination="xeq-HV-IqV" kind="presentation" identifier="loginSegue" id="gOQ-KJ-DQe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.39130434782609" y="123.09782608695653"/>
         </scene>
-        <!--Feed View Controller-->
+        <!--Instagram-->
         <scene sceneID="KGB-n0-74V">
             <objects>
                 <viewController id="z00-xJ-mgk" customClass="FeedViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
@@ -79,32 +79,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6q-DX-smu">
-                                <frame key="frameInset" minX="20" minY="20" width="48" height="30"/>
+                                <frame key="frameInset" minX="20" minY="72" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="onLogout:" destination="z00-xJ-mgk" eventType="touchUpInside" id="9WS-Hg-FKz"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="ehX-dA-pfn"/>
                                 </connections>
                             </button>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="insta_camera_btn" translatesAutoresizingMaskIntoConstraints="NO" id="Zjz-pE-VZY">
-                                <frame key="frameInset" minX="369" minY="28" width="25" height="25"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Instagram" id="RPc-ec-plA"/>
                     <connections>
-                        <outlet property="cameraButton" destination="Zjz-pE-VZY" id="jIH-wY-Sd7"/>
                         <outlet property="logoutButton" destination="e6q-DX-smu" id="ymK-oo-yOg"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="C2A-B9-ibU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Glf-De-qdC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1778.2608695652175" y="122.28260869565219"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="by5-N1-Rkr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xeq-HV-IqV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="95p-NI-I30">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="z00-xJ-mgk" kind="relationship" relationship="rootViewController" id="nwz-z0-0pd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KSN-nH-Jkx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="871.01449275362324" y="122.28260869565219"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="insta_camera_btn" width="25" height="25"/>
-    </resources>
 </document>
