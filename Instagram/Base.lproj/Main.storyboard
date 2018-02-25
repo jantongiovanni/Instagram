@@ -69,7 +69,7 @@
         <!--Instagram-->
         <scene sceneID="KGB-n0-74V">
             <objects>
-                <viewController id="z00-xJ-mgk" customClass="FeedViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InstagramID" id="z00-xJ-mgk" customClass="FeedViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wks-kD-BK7"/>
                         <viewControllerLayoutGuide type="bottom" id="3Yk-PQ-HGM"/>
@@ -212,6 +212,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gOQ-KJ-DQe"/>
+        <segue reference="l9x-kU-8DN"/>
     </inferredMetricsTieBreakers>
 </document>
