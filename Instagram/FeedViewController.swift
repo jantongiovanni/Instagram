@@ -9,16 +9,22 @@
 import UIKit
 import Parse
 
-class FeedViewController: UIViewController {
+class FeedViewController: UIViewController, UITableViewDataSource {
+    
+    var posts : [Post] = []
 
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var composeButton: UIButton!
     
     
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.dataSource = self
         // Do any additional setup after loading the view.
+        fetchPosts()
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +50,23 @@ class FeedViewController: UIViewController {
         self.performSegue(withIdentifier: "composeSegue", sender: nil)
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
+        //let post = posts[indexPath.row]
+        
+        //let caption = post.caption
+        //cell.postCaption.text = caption
+        
+        
+        
+        
+        return cell
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -53,5 +76,21 @@ class FeedViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    // construct PFQuery
+    func fetchPosts(){
+    let query = Post.query()
+    query?.order(byDescending: "createdAt")
+    query?.includeKey("author")
+    query?.limit = 20
+    
+    // fetch data asynchronously
+        query?.findObjectsInBackground { (Post, error: Error?) -> Void in
+    if let posts = Post {
+        self.posts = posts as! [Post]
+        self.tableView.reloadData()
+    } else {
+        print("fetch failed")
+    }
+    }
+    }
 }

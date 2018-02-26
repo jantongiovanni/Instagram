@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Parse
 
 class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
+    //var posts : [PFObject] = []
+    
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
@@ -54,6 +57,14 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.performSegue(withIdentifier: "cancelSegue", sender: nil)
     }
     @IBAction func onShare(_ sender: AnyObject) {
+        Post.postUserImage(image: imageView.image, withCaption: captionText.text){(success, error) in
+            if success{
+                print("post successful")
+            }
+            else if let e = error as NSError?{
+                print (e.localizedDescription)
+            }
+        }
     }
 
     /*
