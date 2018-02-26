@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Toucan
 
 class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
@@ -38,9 +39,9 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
         // Get the image captured by the UIImagePickerController
         let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         //let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
-        
+        let resizedImage = Toucan.Resize.resizeImage(originalImage, size: CGSize(width: 414, height: 414))
+        imageView.image = resizedImage
         imageView.contentMode = .scaleAspectFit
-        imageView.image = originalImage
         // Dismiss UIImagePickerController to go back to your original view controller
         dismiss(animated: true, completion: nil)
     }
@@ -66,6 +67,8 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
             }
         }
     }
+    
+    
 
     /*
     // MARK: - Navigation

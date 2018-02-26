@@ -8,8 +8,9 @@
 
 import UIKit
 import Parse
+import ParseUI
 
-class FeedViewController: UIViewController, UITableViewDataSource {
+class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var posts : [Post] = []
 
@@ -22,9 +23,11 @@ class FeedViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         // Do any additional setup after loading the view.
-        fetchPosts()
         self.tableView.reloadData()
+        fetchPosts()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,15 +58,25 @@ class FeedViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
-        //let post = posts[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+        let post = posts[indexPath.row]
         
-        //let caption = post.caption
-        //cell.postCaption.text = caption
+        let caption = post.caption
         
+        cell.postCaption.text = caption
         
-        
-        
+        if let imageFile : PFFile = post.media {
+            imageFile.getDataInBackground(block: {(data, error) in
+                if error == nil {
+                DispatchQueue.main.async {
+                let image = UIImage(data: data!)
+                cell.postImage.image = image
+                }
+                } else{
+                print(error!.localizedDescription)
+                }
+            })
+        }
         return cell
     }
     
