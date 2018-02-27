@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Username" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BvC-9t-wzx">
@@ -84,7 +84,7 @@
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="onLogout:" destination="z00-xJ-mgk" eventType="touchUpInside" id="9WS-Hg-FKz"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="ehX-dA-pfn"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="s7u-Oa-SQD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chu-lq-AHp">
@@ -109,9 +109,9 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" restorationIdentifier="postImage" translatesAutoresizingMaskIntoConstraints="NO" id="cE2-Ac-uT9" customClass="PFImageView">
                                                     <frame key="frameInset" width="414" height="414"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="postMessage" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3e-Ge-FUK">
-                                                    <frame key="frameInset" minX="8" minY="436" width="42" height="25"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="postMessage" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3e-Ge-FUK">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -162,36 +162,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="La9-UH-feh">
-                                <frame key="frameInset" minY="64" width="414" height="414"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="La9-UH-feh">
+                                <frame key="frameInset" minY="28" width="414" height="414"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TimeStamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGE-sX-XMM">
-                                <frame key="frameInset" minX="20" minY="514" width="88" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="TimeStamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGE-sX-XMM">
+                                <frame key="frameInset" minX="20" minY="460" width="204" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iR9-gw-Omc">
-                                <frame key="frameInset" minX="20" minY="563" width="52" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdE-fE-4Ef">
-                                <frame key="frameInset" minX="20" minY="633" width="60" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdE-fE-4Ef">
+                                <frame key="frameInset" minX="20" minY="489" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="La9-UH-feh" firstAttribute="leading" secondItem="imU-Cx-mjJ" secondAttribute="leading" id="6ek-5K-Qfe"/>
+                            <constraint firstItem="fGE-sX-XMM" firstAttribute="top" secondItem="La9-UH-feh" secondAttribute="bottom" constant="8" id="DA4-ms-PJ0"/>
+                            <constraint firstItem="La9-UH-feh" firstAttribute="top" secondItem="Ot8-XN-3yA" secondAttribute="bottom" constant="44" id="DaS-Bn-TvI"/>
+                            <constraint firstAttribute="trailing" secondItem="La9-UH-feh" secondAttribute="trailing" id="GEb-OJ-pnc"/>
+                            <constraint firstItem="VdE-fE-4Ef" firstAttribute="leading" secondItem="imU-Cx-mjJ" secondAttribute="leading" constant="8" id="S0N-Gs-1NX"/>
+                            <constraint firstItem="fGE-sX-XMM" firstAttribute="leading" secondItem="imU-Cx-mjJ" secondAttribute="leading" constant="8" id="fd6-1z-Meb"/>
+                            <constraint firstItem="VdE-fE-4Ef" firstAttribute="top" secondItem="fGE-sX-XMM" secondAttribute="bottom" constant="8" id="meZ-4E-78c"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="authorLabel" destination="iR9-gw-Omc" id="evV-VM-5Pt"/>
                         <outlet property="captionLabel" destination="VdE-fE-4Ef" id="bPQ-HZ-mAe"/>
                         <outlet property="postImageView" destination="La9-UH-feh" id="XwC-dR-VwR"/>
                         <outlet property="timestampLabel" destination="fGE-sX-XMM" id="5qA-gT-Oht"/>
@@ -228,6 +226,7 @@
                                 <state key="normal" title="Share"/>
                                 <connections>
                                     <action selector="onShare:" destination="jwv-hc-l0R" eventType="touchUpInside" id="b9e-7I-fT0"/>
+                                    <segue destination="xeq-HV-IqV" kind="presentation" identifier="shareSegue" id="Tel-OV-Ozq"/>
                                 </connections>
                             </button>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QcI-ea-586">
@@ -304,6 +303,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="l9x-kU-8DN"/>
+        <segue reference="Tel-OV-Ozq"/>
     </inferredMetricsTieBreakers>
 </document>

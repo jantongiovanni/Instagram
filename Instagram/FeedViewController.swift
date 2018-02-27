@@ -40,19 +40,23 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onLogout(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
+        self.performSegue(withIdentifier: "logoutSegue", sender: nil)
 
-    @IBAction func onLogout(_ sender: AnyObject) {
-        PFUser.logOutInBackground { (error: Error?) in
-            if let error = error {
-                print("User logout failed: \(error.localizedDescription)")
-            } else {
-                print("User logout successful")
-            //need to segue back to login screen
-                self.performSegue(withIdentifier: "logoutSegue", sender: nil)
-            }
-        }
-       
     }
+//    @IBAction func onLogout(_ sender: AnyObject) {
+//        PFUser.logOutInBackground { (error: Error?) in
+//            if let error = error {
+//                print("User logout failed: \(error.localizedDescription)")
+//            } else {
+//                print("User logout successful")
+//            //need to segue back to login screen
+//                self.performSegue(withIdentifier: "logoutSegue", sender: nil)
+//            }
+//        }
+//       
+//    }
     
     @IBAction func onCompose(_ sender: AnyObject) {
         self.performSegue(withIdentifier: "composeSegue", sender: nil)
@@ -116,7 +120,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.tableView.reloadData()
         } else {
             print("fetch failed")
-            }
+            }               
         }
     }
     

@@ -14,7 +14,6 @@ class DetailViewController: UIViewController {
     var post: PFObject!
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var timestampLabel: UILabel!
-    @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
     var postImage : UIImage!
 
@@ -24,7 +23,6 @@ class DetailViewController: UIViewController {
         postImageView.image = postImage
         self.timestampLabel.text = post["timestamp"] as? String
         self.captionLabel.text = post["caption"] as? String
-        self.authorLabel.text = post["author"] as? String
         
         // Do any additional setup after loading the view.
     }
