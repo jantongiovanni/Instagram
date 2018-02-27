@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Username" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BvC-9t-wzx">
@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="117.39130434782609" y="123.09782608695653"/>
         </scene>
-        <!--Instagram-->
+        <!--Feed-->
         <scene sceneID="KGB-n0-74V">
             <objects>
-                <viewController storyboardIdentifier="InstagramID" id="z00-xJ-mgk" customClass="FeedViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InstagramID" title="Feed" id="z00-xJ-mgk" customClass="FeedViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wks-kD-BK7"/>
                         <viewControllerLayoutGuide type="bottom" id="3Yk-PQ-HGM"/>
@@ -104,7 +104,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="481"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RZB-BO-Pyk" id="fle-ud-tgo">
-                                            <frame key="frameInset" width="414" height="480.66666666666669"/>
+                                            <frame key="frameInset" width="414" height="480"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" restorationIdentifier="postImage" translatesAutoresizingMaskIntoConstraints="NO" id="cE2-Ac-uT9" customClass="PFImageView">
@@ -127,14 +127,18 @@
                                         <connections>
                                             <outlet property="postCaption" destination="L3e-Ge-FUK" id="PZZ-3L-bQT"/>
                                             <outlet property="postImage" destination="cE2-Ac-uT9" id="CIf-js-Iea"/>
+                                            <segue destination="2PP-z7-mZv" kind="show" identifier="Feed" id="c9C-YV-ajR"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration" label="Feed"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Instagram" id="RPc-ec-plA"/>
+                    <navigationItem key="navigationItem" title="Instagram" id="RPc-ec-plA">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="LV4-4g-tdC"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="composeButton" destination="chu-lq-AHp" id="pCv-AA-doF"/>
                         <outlet property="logoutButton" destination="e6q-DX-smu" id="ymK-oo-yOg"/>
@@ -145,6 +149,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Glf-De-qdC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1778.2608695652175" y="122.28260869565219"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="3Up-w4-9BT">
+            <objects>
+                <viewController id="2PP-z7-mZv" customClass="DetailViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ot8-XN-3yA"/>
+                        <viewControllerLayoutGuide type="bottom" id="TgL-Be-Dlh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="imU-Cx-mjJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="La9-UH-feh">
+                                <frame key="frameInset" minY="64" width="414" height="414"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TimeStamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGE-sX-XMM">
+                                <frame key="frameInset" minX="20" minY="514" width="88" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iR9-gw-Omc">
+                                <frame key="frameInset" minX="20" minY="563" width="52" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdE-fE-4Ef">
+                                <frame key="frameInset" minX="20" minY="633" width="60" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="authorLabel" destination="iR9-gw-Omc" id="evV-VM-5Pt"/>
+                        <outlet property="captionLabel" destination="VdE-fE-4Ef" id="bPQ-HZ-mAe"/>
+                        <outlet property="postImageView" destination="La9-UH-feh" id="XwC-dR-VwR"/>
+                        <outlet property="timestampLabel" destination="fGE-sX-XMM" id="5qA-gT-Oht"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q7V-aZ-72W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1792.753623188406" y="845.38043478260875"/>
         </scene>
         <!--Compose-->
         <scene sceneID="p00-CB-cJ2">
@@ -161,7 +216,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPk-kU-11L">
                                 <frame key="frameInset" minX="19" minY="72" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel"/>
+                                <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="onCancel:" destination="jwv-hc-l0R" eventType="touchUpInside" id="Et0-an-Re0"/>
                                     <segue destination="xeq-HV-IqV" kind="presentation" identifier="cancelSegue" id="l9x-kU-8DN"/>

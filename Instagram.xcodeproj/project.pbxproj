@@ -13,6 +13,7 @@
 		D8815C9A2040F8390028EDD7 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8815C992040F8390028EDD7 /* ComposeViewController.swift */; };
 		D8815CE02043CFB80028EDD7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8815CDF2043CFB80028EDD7 /* Post.swift */; };
 		D8815CE22043D3F30028EDD7 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8815CE12043D3F30028EDD7 /* PostCell.swift */; };
+		D8815CE42044B5300028EDD7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8815CE32044B5300028EDD7 /* DetailViewController.swift */; };
 		F0960E46203B8CFF00EDA7B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0960E45203B8CFF00EDA7B0 /* LoginViewController.swift */; };
 		F0B3D61C203E3B8E00AA4EF1 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B3D61B203E3B8E00AA4EF1 /* FeedViewController.swift */; };
 		F0EAE811203B89CA00D1CC52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EAE810203B89CA00D1CC52 /* AppDelegate.swift */; };
@@ -54,6 +55,7 @@
 		D8815C992040F8390028EDD7 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		D8815CDF2043CFB80028EDD7 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D8815CE12043D3F30028EDD7 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		D8815CE32044B5300028EDD7 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F0960E45203B8CFF00EDA7B0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F0B3D61B203E3B8E00AA4EF1 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		F0EAE80D203B89CA00D1CC52 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				F0EAE814203B89CA00D1CC52 /* Main.storyboard */,
+				D8815CE32044B5300028EDD7 /* DetailViewController.swift */,
 				D8815C992040F8390028EDD7 /* ComposeViewController.swift */,
 				F0960E45203B8CFF00EDA7B0 /* LoginViewController.swift */,
 				F0B3D61B203E3B8E00AA4EF1 /* FeedViewController.swift */,
@@ -486,6 +489,7 @@
 				D8815CE02043CFB80028EDD7 /* Post.swift in Sources */,
 				F0B3D61C203E3B8E00AA4EF1 /* FeedViewController.swift in Sources */,
 				F0EAE811203B89CA00D1CC52 /* AppDelegate.swift in Sources */,
+				D8815CE42044B5300028EDD7 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

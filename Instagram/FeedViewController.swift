@@ -24,6 +24,11 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        //UIRefreshControll
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: UIControlEvents.valueChanged)
+        // add refresh control to table view
+        tableView.insertSubview(refreshControl, at: 0)
         // Do any additional setup after loading the view.
         self.tableView.reloadData()
         fetchPosts()
@@ -79,16 +84,24 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         return cell
     }
+  
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    func refreshControlAction(_ refreshControl: UIRefreshControl) {
+        
+        // ... Create the URLRequest `myRequest` ...
+        
+        // Configure session so that completion handler is executed on main UI thread
+        //let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        //let task: URLSessionDataTask = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+          fetchPosts()
+            // ... Use the new data to update the data source ...
+            // Reload the tableView now that there is new data
+            tableView.reloadData()
+            // Tell the refreshControl to stop spinning
+            refreshControl.endRefreshing()
+        }
+    
+    
     // construct PFQuery
     func fetchPosts(){
     let query = Post.query()
@@ -101,9 +114,27 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     if let posts = Post {
         self.posts = posts as! [Post]
         self.tableView.reloadData()
-    } else {
-        print("fetch failed")
+        } else {
+            print("fetch failed")
+            }
+        }
     }
-    }
-    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if(sender != nil) {
+            
+            let cell = sender as! UITableViewCell
+            if let indexPath = tableView.indexPath(for: cell) {
+                let post = posts[indexPath.row]
+                let detailViewController = segue.destination as! DetailViewController
+                detailViewController.post = post
+                
+                let postCell = sender as! PostCell
+                detailViewController.postImage = postCell.postImage.image!
+            }
+        }
+    
+    
+}
 }
